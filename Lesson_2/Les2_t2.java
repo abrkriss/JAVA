@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
+
+
 // "фамилия":"Иванов","оценка":"5","предмет":"Математика"
 // "фамилия":"Петрова","оценка":"4","предмет":"Информатика"
 
@@ -19,24 +21,28 @@ import java.io.IOException;
 // Студент Краснов получил 5 по предмету Физика.
 // .
 public class Les2_t2 {
+    
     public static void main(String[] args)throws Exception {
         try{
         FileReader fr = new FileReader("task2.txt");
         BufferedReader reader = new BufferedReader(fr);
         String line = reader.readLine();
+        String[]res;
         
             while (line!= null){
-                System.out.println(line);
+                //System.out.println(line);
+                line = line.replace("\"", "");
+                res = line.split("[:,.]");
+               //System.out.println(Arrays.toString(res));
                 line = reader.readLine();  
+                System.out.printf("Студент " +res[1]+" получил "+ res[3] +" по предмету " + res[5]+"\n");
             }
         }
             catch(FileNotFoundException e){
                 e.printStackTrace();
-        }   catch (IOException e){
+            }   catch (IOException e){
                 e.printStackTrace();
-        }  
-        
-    }
-    
-   
+            } 
+            
+    }  
 }
