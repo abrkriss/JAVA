@@ -34,6 +34,7 @@ public class Les2_t1 {
             logger.info(Arrays.toString(nums));
                 
             } 
+            
         }
     }
 
