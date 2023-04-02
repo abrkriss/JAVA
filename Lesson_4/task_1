@@ -1,0 +1,20 @@
+import java.util.LinkedList;
+import java.util.Stack;
+
+public class task1{
+  public static void main(String[] args) {
+    LinkedList list = new LinkedList();
+    list.add("cat");
+    list.add("summer");
+    list.add("8");
+    list.add("owner");
+    list.add("*_*");
+    System.out.println(list);
+    Stack<Integer> stack = new Stack<>();
+        stack.addAll(list);
+        list.clear();
+        while (!stack.empty())
+            list.add(stack.pop());
+        System.out.println(list);
+    }
+}
